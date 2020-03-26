@@ -1,7 +1,6 @@
 package com.stackroute.datamunger.reader;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +24,7 @@ public class CsvQueryProcessor implements QueryProcessingEngine {
 		 * initialize BufferedReader to read from the file which is mentioned in
 		 * QueryParameter. Consider Handling Exception related to file reading.
 		 */
-		FileReader fileReader = new FileReader(queryParameter.getFile());
+		FileReader fileReader = new FileReader(queryParameter.getFileName());
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 		/*

@@ -10,7 +10,7 @@ import java.util.List;
  * */
 public class QueryParameter {
 	
-	private String file;
+	private String fileName;
 	private String baseQuery;
 	private List<Restriction> restrictions;
 	private List<String> logicalOperators;
@@ -18,9 +18,13 @@ public class QueryParameter {
 	private List<String> fields = new ArrayList<String>();
 	private List<String> groupByFields = new ArrayList<String>();
 	private List<String> orderByFields = new ArrayList<String>();
-
+	private String QUERY_TYPE;
+	
+	public void setQUERY_TYPE(String qUERY_TYPE) {
+		QUERY_TYPE = qUERY_TYPE;
+	}
 	public void setFileName(String fileName) {
-		this.file = fileName;
+		this.fileName = fileName;
 	}
 
 	public void setBaseQuery(String baseQuery) {
@@ -51,8 +55,8 @@ public class QueryParameter {
 		this.orderByFields = orderByFields;
 	}
 
-	public String getFile() {
-		return file;
+	public String getFileName() {
+		return fileName;
 	}
 
 	public String getBaseQuery() {
@@ -84,8 +88,7 @@ public class QueryParameter {
 	}
 
 	public String getQUERY_TYPE() {
-		// TODO Auto-generated method stub
-		return null;
+		return QUERY_TYPE;
 	}
 
 	

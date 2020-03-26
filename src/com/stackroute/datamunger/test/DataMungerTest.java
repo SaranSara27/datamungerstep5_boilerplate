@@ -62,7 +62,7 @@ public class DataMungerTest {
 		queryParameter = queryParser.parseQuery(queryString);
 		assertEquals(
 				"testGetFileName(): File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		display(queryString, queryParameter);
 	}
 
@@ -72,7 +72,7 @@ public class DataMungerTest {
 		queryParameter = queryParser.parseQuery(queryString);
 		assertNotEquals(
 				"testGetFileNameFailure(): File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		display(queryString, queryParameter);
 	}
 
@@ -120,7 +120,7 @@ public class DataMungerTest {
 
 		assertEquals(
 				"testGetFieldsAndRestrictions() : File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		assertEquals(
 				"testGetFieldsAndRestrictions() : Select fields extractions failed. The query string can have multiple fields separated by comma after the 'select' keyword. The extracted fields is supposed to be stored in a String array which is to be returned by the method getFields(). Check getFields() method",
 				fields, queryParameter.getFields());
@@ -198,7 +198,7 @@ public class DataMungerTest {
 
 		assertEquals(
 				"testGetRestrictionsAndAggregateFunctions() : File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		assertEquals(
 				"testGetRestrictionsAndAggregateFunctions() : Select fields extractions failed. The query string can have multiple fields separated by comma after the 'select' keyword. The extracted fields is supposed to be stored in a String array which is to be returned by the method getFields(). Check getFields() method",
 				fields, queryParameter.getFields());
@@ -257,7 +257,7 @@ public class DataMungerTest {
 
 		assertEquals(
 				"testGetGroupByOrderByClause() : File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		assertEquals(
 				"testGetGroupByOrderByClause() : Select fields extractions failed. The query string can have multiple fields separated by comma after the 'select' keyword. The extracted fields is supposed to be stored in a String array which is to be returned by the method getFields(). Check getFields() method",
 				fields, queryParameter.getFields());
@@ -371,7 +371,7 @@ public class DataMungerTest {
 
 		assertEquals(
 				"testGetOrderByAndWhereConditionClause() : File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		assertEquals(
 				"testGetOrderByAndWhereConditionClause() : Select fields extractions failed. The query string can have multiple fields separated by comma after the 'select' keyword. The extracted fields is supposed to be stored in a String array which is to be returned by the method getFields(). Check getFields() method",
 				fields, queryParameter.getFields());
@@ -422,7 +422,7 @@ public class DataMungerTest {
 
 		assertEquals(
 				"testGetOrderByClause() : File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		assertEquals(
 				"testGetOrderByClause() : Select fields extractions failed. The query string can have multiple fields separated by comma after the 'select' keyword. The extracted fields is supposed to be stored in a String array which is to be returned by the method getFields(). Check getFields() method",
 				fields, queryParameter.getFields());
@@ -447,7 +447,7 @@ public class DataMungerTest {
 
 		assertEquals(
 				"testGetOrderByClause() : File name extraction failed. Check getFile() method. File name can be found after a space after from clause. Note: CSV file can contain a field that contains from as a part of the column name. For eg: from_date,from_hrs etc",
-				"data/ipl.csv", queryParameter.getFile());
+				"data/ipl.csv", queryParameter.getFileName());
 		assertEquals(
 				"testGetOrderByClause() : Select fields extractions failed. The query string can have multiple fields separated by comma after the 'select' keyword. The extracted fields is supposed to be stored in a String array which is to be returned by the method getFields(). Check getFields() method",
 				fields, queryParameter.getFields());
@@ -463,7 +463,7 @@ public class DataMungerTest {
 		System.out.println("\nQuery : " + queryString);
 		System.out.println("--------------------------------------------------");
 		System.out.println("Base Query:" + queryParameter.getBaseQuery());
-		System.out.println("File:" + queryParameter.getFile());
+		System.out.println("File:" + queryParameter.getFileName());
 		System.out.println("Query Type:" + queryParameter.getQUERY_TYPE());
 		List<String> fields = queryParameter.getFields();
 		System.out.println("Selected field(s):");
