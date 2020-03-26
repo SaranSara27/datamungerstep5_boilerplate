@@ -15,28 +15,42 @@ package com.stackroute.datamunger.query;
  */
 public class DataTypeDefinitions {
 
-	//method stub
-	public static Object getDataType(String input) {
+	public static String getDataType(String input) {
 	
-		// checking for Integer
+
+		if(input.matches("[0-9]+")) 
+		{
+			return "java.lang.Integer";
+		} 
 		
-		// checking for floating point numbers
+
+		else if(input.matches("[0-9]+.[0-9]+")) 
+		{
+			return "java.lang.Double";
+		} 
 		
-		// checking for date format dd/mm/yyyy
+		else if(input.isEmpty())
+		{
+			return "java.lang.Object";
+		} 
 		
-		// checking for date format mm/dd/yyyy
+		else if(input.matches("^[0-9]{2}/[0-9]{2}/[0-9]{4}$") | 
+				input.matches("^[0-9]{4}-[0-9]{2}-[0-9]{2}$") | 
+				input.matches("^[0-9]{2}-[a-z]{3}-[0-9]{4}$") |
+				input.matches("^[0-9]{2}-[a-z]{3}-[0-9]{2}$") |
+				input.matches("^[0-9]{2}-[a-z]{3,9}-[0-9]{2}$") | 
+				input.matches("^[0-9]{2}-[a-z]{3,9}-[0-9]{4}$")) 
+		{
+			return "java.util.Date";
+		} 
 		
-		// checking for date format dd-mon-yy
 		
-		// checking for date format dd-mon-yyyy
 		
-		// checking for date format dd-month-yy
+		else 
+		{
+			return "java.lang.String";
+		}
 		
-		// checking for date format dd-month-yyyy
-		
-		// checking for date format yyyy-mm-dd
-		
-		return null;
 	}
 	
 
